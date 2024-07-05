@@ -1,11 +1,11 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
-access_token = "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"
+
 model_id = "google/gemma-2b-it"                          # Identifier of pre-trained model
 dtype = torch.bfloat16                                   # half-precision floating-point format that uses less memory
 
-tokenizer = AutoTokenizer.from_pretrained(model_id, token = access_token)     # Loads tokenizer associated with the model. The tokenizer is responsible for converting input text into a format that the model can understand.
+tokenizer = AutoTokenizer.from_pretrained(model_id)     # Loads tokenizer associated with the model. The tokenizer is responsible for converting input text into a format that the model can understand.
 model = AutoModelForCausalLM.from_pretrained(           
     model_id, 
     device_map = "auto", 
